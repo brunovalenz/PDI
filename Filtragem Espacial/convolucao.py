@@ -1,6 +1,7 @@
 import datetime
 import numpy as np
 from PIL import Image
+import numpy as np
 import matplotlib.pyplot as plt
 import scipy
 import cv2
@@ -35,6 +36,14 @@ def convolucao(imagem, matriz):
 
     return Image.fromarray(res[dif:img.shape[0]-dif, dif:img.shape[1]-dif])
 
+def convolucaoSciPy(imagem, matriz):
+    img = np.array(imagem)
+    return scipy.signal.convolve2d(img, matriz, mode='same')
+
+def convolucaoOpenCV(imagem, matriz):
+    img = np.array(imagem)
+    return cv2.filter2D(img, -1, matriz)
+
 def matrizMedia(size):
     if((size % 2) == 0):
         size += 1
@@ -52,6 +61,45 @@ def matrizGaussiana(size, sigma):
         for y in range(size):
             matriz[x, y] = np.exp(-((x - size//2)**2 + (y - size//2)**2) / (2*sigma**2))
     return matriz / np.sum(matriz)
+
+
+def matrizLaplaciana(size):
+    if((size % 2) == 0):
+        size += 1
+    if(size < 3):
+        size = 3
+    matriz = np.zeros((size, size))
+    matriz[size//2, size//2] = -4
+    matriz[size//2-1, size//2] = 1
+    matriz[size//2+1, size//2] = 1
+    matriz[size//2, size//2-1] = 1
+    matriz[size//2, size//2+1] = 1
+    return matriz
+
+def matrizSobelX():
+    return np.array([[-1, -2, -1], [0, 0, 0], [1, 2, 1]])
+
+def matrizSobelY():
+    return np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
+
+def gradiente(imagem):
+    sobelX = matrizSobelX()
+    sobelY = matrizSobelY()
+
+    gradienteX = convolucaoOpenCV(imagem, sobelX)
+    gradienteY = convolucaoOpenCV(imagem, sobelY)
+    gradienteX = np.array(gradienteX)
+    gradienteY = np.array(gradienteY)
+
+    gradiente = np.sqrt(np.power(gradienteX, 2) + np.power(gradienteY, 2))
+
+    return gradiente
+
+def laplacianoSum(imagem):
+    laplaciano = matrizLaplaciana(3)
+    laplaciano = convolucao(imagem, laplaciano)
+    sum = np.array(imagem) + np.array(laplaciano)
+    return Image.fromarray(sum)
 
 def main():
     biel = Image.open('imgs/biel.png')
@@ -79,11 +127,14 @@ def main():
             print("Opção inválida")
             exit()
 
-    gaussiana = matrizGaussiana(5, 1)
-
-    gaussiana = convolucao(imagem, gaussiana)
-
-    plot(imagem, gaussiana, "Original", "Guassiana")
-
+    
+    plot(imagem, convolucao(imagem, matrizMedia(5)), "Original", "Média 5x5 manual")
+    plot(imagem, convolucaoSciPy(imagem, matrizGaussiana(7, 1)), "Original", "Guassiano 7x7 SciPy")
+    plot(imagem, convolucaoOpenCV(imagem, matrizLaplaciana(3)), "Original", "Laplaciano 3x3 OpenCV")
+    plot(imagem, convolucaoOpenCV(imagem, matrizSobelX()), "Original", "SobelX OpenCV")
+    plot(imagem, convolucaoSciPy(imagem, matrizSobelY()), "Original", "SobelY Scipy")
+    plot(imagem, gradiente(imagem), "Original", "Gradiente")
+    plot(imagem, laplacianoSum(imagem), "Original", "Laplaciano + Original")
+    
 if __name__ == "__main__":
     main()
