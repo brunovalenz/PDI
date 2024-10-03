@@ -79,11 +79,11 @@ def main():
             print("Opção inválida")
             exit()
 
-    media = matrizMedia(1)
+    gaussiana = matrizGaussiana(5, 1)
 
-    media = convolucao(imagem, media)
+    gaussiana = convolucao(imagem, gaussiana)
 
-    plot(imagem, media, "Original", "Média")
+    plot(imagem, gaussiana, "Original", "Guassiana")
 
 if __name__ == "__main__":
     main()
