@@ -103,10 +103,13 @@ def difVideo(video, background, th=50):
     frames = getFrames(video)
     frames = grayscale(frames)
     #frames = aplicar_equalizacao(frames)
+    frames = aplicar_normalizacao(frames)
+    #mostrarVideo(frames)
+
     #frames = medias(frames)
     #background = np.array(background)
     
-    salvar(Image.fromarray(mediaFrames(frames, 200)), 'media')
+    #salvar(Image.fromarray(mediaFrames(frames, 200)), 'media')
 
     for i in range(len(frames)):
         frames[i] = diferenca(background, frames[i], th)
@@ -166,13 +169,20 @@ def medianas(frames):
 
     return newFrames
 
+def normalizar_frame(frame):
+    return cv2.normalize(frame, None, 0, 255, cv2.NORM_MINMAX)
+
+def aplicar_normalizacao(frames):
+    return [normalizar_frame(frame) for frame in frames]
+
 def main():
     video = carregarVideo('Desafio Stanford/videos/surveillance.avi')
-    background = Image.open('Desafio Stanford/imgs/media2024-10-09.png')
+    background = Image.open('Desafio Stanford/imgs/background.png')
     #background = media(background)
     #background = equalizar_frame(np.array(background))
+    #background = normalizar_frame(np.array(background))
 
-    newVideo = difVideo(video, background, 30)
+    newVideo = difVideo(video, background, 211)
 
     mostrarVideo(newVideo)
     salvarVideo(newVideo, 'movimento')
