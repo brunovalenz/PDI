@@ -83,9 +83,9 @@ def main():
     impressao = Image.open('Segmentação/imgs/impressao.tif')
     emanuel = Image.open('Segmentação/imgs/emanuel.jpg')
 
-    #um(pontos)
+    um(pontos)
 
-    #dois(impressao)
+    dois(impressao)
 
     tres(emanuel, 60, 70)
 
