@@ -28,7 +28,7 @@ def salvar(imagem, nome):
     entrada = input()
     if entrada == "s":
         time = datetime.datetime.now().strftime("%Y-%m-%d")
-        imagem.save(f'Desafio Stanford/imgs/{nome}{time}.png')
+        imagem.save(f'5-Desafio Stanford/imgs/{nome}{time}.png')
 
 def carregarVideo(path):
     vid = cv2.VideoCapture(path)
@@ -62,7 +62,7 @@ def getFrames(vid):
 
 
 def salvarVideo(video, nome):
-    pasta = 'Desafio Stanford/videos/'
+    pasta = '5-Desafio Stanford/videos/'
 
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out = cv2.VideoWriter(f'{pasta}{nome}.mp4', fourcc, 40.0, (video[0].shape[1], video[0].shape[0]), isColor=True)
@@ -176,8 +176,8 @@ def aplicar_normalizacao(frames):
     return [normalizar_frame(frame) for frame in frames]
 
 def main():
-    video = carregarVideo('Desafio Stanford/videos/surveillance.avi')
-    background = Image.open('Desafio Stanford/imgs/background.png')
+    video = carregarVideo('5-Desafio Stanford/videos/surveillance.avi')
+    background = Image.open('5-Desafio Stanford/imgs/background.png')
     #background = media(background)
     #background = equalizar_frame(np.array(background))
     #background = normalizar_frame(np.array(background))

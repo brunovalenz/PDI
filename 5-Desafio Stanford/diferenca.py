@@ -40,8 +40,8 @@ def diferenca(img1, img2, th=50):
     return threshold(subtrair(img1, img2), th)
 
 def main():
-    pcb = Image.open('Desafio Stanford/imgs/pcb.png')
-    pcbDefected = Image.open('Desafio Stanford/imgs/pcbDefected.png')
+    pcb = Image.open('5-Desafio Stanford/imgs/pcb.png')
+    pcbDefected = Image.open('5-Desafio Stanford/imgs/pcbDefected.png')
     
     dif = diferenca(pcb, pcbDefected, 20)
     plot(pcb, pcbDefected, dif, "PCB", "PCB Defeituosa", "Diferença")
