@@ -98,11 +98,11 @@ def sinc(size = 512):
 
 
 def main():
-    car = Image.open('Transformada de Fourier/imgs/car.tif')
-    lena = Image.open('Transformada de Fourier/imgs/len_periodic_noise.png')
-    newspaper = Image.open('Transformada de Fourier/imgs/newspaper_shot_woman.tif')
-    indian = Image.open('Transformada de Fourier/imgs/periodic_noise.png')
-    sincIMG = Image.open('Transformada de Fourier/imgs/sinc.png')
+    car = Image.open('6-Transformada de Fourier/imgs/car.tif')
+    lena = Image.open('6-Transformada de Fourier/imgs/len_periodic_noise.png')
+    newspaper = Image.open('6-Transformada de Fourier/imgs/newspaper_shot_woman.tif')
+    indian = Image.open('6-Transformada de Fourier/imgs/periodic_noise.png')
+    sincIMG = Image.open('6-Transformada de Fourier/imgs/sinc.png')
     imagem = None
 
     print("Escolha a imagem: ")
