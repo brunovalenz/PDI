@@ -13,4 +13,4 @@
 ### [9 - Segmentação](9-Segmentação/note.ipynb)
 ### [10 - Segmentação Dois](10-Segmentação2/note.ipynb)
 ### [11 - Representação](11-Representação/note.ipynb)
-Para vizualizar as formulas utilize uma plataforma que suporte a anotação math, como no VSCode
+Para vizualizar as fórmulas utilize uma plataforma que suporte a anotação math, como no VSCode
