@@ -11,5 +11,5 @@
 ### [7 - Morfologia](7-Morfologia/note.ipynb)
 ### [8 - Filtragem Frequencia](8-Filtragem%20Frequencia/note.ipynb)
 ### [9 - Segmentação](9-Segmentação/note.ipynb)
-### [10 - Segmentação2](10-Segmentação2/note.ipynb)
+### [10 - Segmentação Dois](10-Segmentação2/note.ipynb)
 ### [11 - Representação](11-Representação/note.ipynb)
