@@ -79,14 +79,14 @@ def main():
   linha7 = np.array([[1], [1], [1], [1], [1], [1], [1]])
   cruz7x7 = np.array([[0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 1, 1, 0], [1, 1, 1, 1, 1, 1, 1], [0, 1, 1, 1, 1, 1, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0]])
 
-  fingerprint = Image.open('Morfologia/imgs/fingerprint.tif') 
-  imagem1 = Image.open('Morfologia/imgs/Imagem1.tif') 
-  imagem2 = Image.open('Morfologia/imgs/Imagem2.tif') 
-  morfologia1 = Image.open('Morfologia/imgs/morfologia1.tif') 
-  morfologia2 = Image.open('Morfologia/imgs/morfologia2.tif') 
-  noiseRectangle = Image.open('Morfologia/imgs/noise_rectangle.tif') #f
-  rostoPerfil = Image.open('Morfologia/imgs/rosto_perfil.tif') #h
-  textGaps = Image.open('Morfologia/imgs/text_gaps.tif') #g
+  fingerprint = Image.open('7-Morfologia/imgs/fingerprint.tif') 
+  imagem1 = Image.open('7-Morfologia/imgs/Imagem1.tif') 
+  imagem2 = Image.open('7-Morfologia/imgs/Imagem2.tif') 
+  morfologia1 = Image.open('7-Morfologia/imgs/morfologia1.tif') 
+  morfologia2 = Image.open('7-Morfologia/imgs/morfologia2.tif') 
+  noiseRectangle = Image.open('7-Morfologia/imgs/noise_rectangle.tif') #f
+  rostoPerfil = Image.open('7-Morfologia/imgs/rosto_perfil.tif') #h
+  textGaps = Image.open('7-Morfologia/imgs/text_gaps.tif') #g
 
   imgs = [fingerprint, imagem1, imagem2, morfologia1, morfologia2, noiseRectangle, rostoPerfil, textGaps]
   texts = ['Fingerprint', 'Imagem 1', 'Imagem 2', 'Morfologia 1', 'Morfologia 2', 'Noise Rectangle', 'Rosto Perfil', 'Text Gaps']
