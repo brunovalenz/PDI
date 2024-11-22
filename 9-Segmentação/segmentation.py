@@ -79,9 +79,9 @@ def tres(img, limiar, limiar2):
     plot(borrada, edit, "Borrada", "Canny")
 
 def main():
-    pontos = Image.open('Segmentação/imgs/pontos.jpeg')
-    impressao = Image.open('Segmentação/imgs/impressao.tif')
-    emanuel = Image.open('Segmentação/imgs/emanuel.jpg')
+    pontos = Image.open('9-Segmentação/imgs/pontos.jpeg')
+    impressao = Image.open('9-Segmentação/imgs/impressao.tif')
+    emanuel = Image.open('9-Segmentação/imgs/emanuel.jpg')
 
     um(pontos)
 
