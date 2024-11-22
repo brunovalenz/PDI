@@ -191,7 +191,7 @@ def imgFiltro(filtro):
     return np.uint8(filtro)
 
 def loadFourierImgs():
-    path = 'Filtragem Frequencia/imgs/fourier/'
+    path = '7-Filtragem Frequencia/imgs/fourier/'
     imgs = []
     imgs.append(np.array(Image.open(path + 'car.tif').convert('L')))
     imgs.append(np.array(Image.open(path + 'len_periodic_noise.png').convert('L')))
