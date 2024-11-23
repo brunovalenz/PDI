@@ -103,13 +103,13 @@ def circulos(imagem, minDist=50, param1=30, param2=50, minRadius=0, maxRadius=0,
     return white
 
 def main():
-    papel = Image.open('Segmentação2/imgs/paper.png')
-    aqua = Image.open('Segmentação2/imgs/aqua.jpg')
-    som = Image.open('Segmentação2/imgs/som.jpg')
-    circulo1 = Image.open('Segmentação2/imgs/circles.jpg')
-    circulo2 = Image.open('Segmentação2/imgs/circles.png')
-    circulo3 = Image.open('Segmentação2/imgs/circles2.jpg')
-    moedas = Image.open('Segmentação2/imgs/coins.jpg')
+    papel = Image.open('10-Segmentação2/imgs/paper.png')
+    aqua = Image.open('10-Segmentação2/imgs/aqua.jpg')
+    som = Image.open('10-Segmentação2/imgs/som.jpg')
+    circulo1 = Image.open('10-Segmentação2/imgs/circles.jpg')
+    circulo2 = Image.open('10-Segmentação2/imgs/circles.png')
+    circulo3 = Image.open('10-Segmentação2/imgs/circles2.jpg')
+    moedas = Image.open('10-Segmentação2/imgs/coins.jpg')
 
 
 

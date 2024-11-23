@@ -50,7 +50,7 @@ def threshold(imagem, tipo):
     return copia
 
 def main():
-    text = Image.open('Segmentação2/imgs/hand_text.tif')
+    text = Image.open('10-Segmentação2/imgs/hand_text.tif')
 
     plot(text, threshold(text, 'global'), 'Original', 'Threshold Global')
     plot(text, threshold(text, 'otsu'), 'Original', 'Threshold Otsu')

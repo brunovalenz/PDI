@@ -55,7 +55,7 @@ def kmeans(imagem, k=8):
 
 
 def main():
-    sushi = Image.open('Segmentação2/imgs/sushi.jpg')
+    sushi = Image.open('10-Segmentação2/imgs/sushi.jpg')
 
     a, b = kmeans(sushi, 8)
     plot(sushi, a, "Original", "Kmeans")
