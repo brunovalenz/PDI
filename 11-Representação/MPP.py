@@ -66,19 +66,23 @@ def MPP(imagem, detalhes=100):
     return new
 
 def main():
-    amassado = Image.open('Representação/imgs/amassado.png')
+    amassado = Image.open('11-Representação/imgs/amassado.png')
 
-    debug = False
+    debug = True
 
     setup = threshold(amassado, 'adaptiveGaussian')
     if debug: 
-        plot(amassado, setup, 'Original', 'Threshold Global')
+        plot(amassado, setup, 'Original', 'Threshold adaptiveGaussian')
+
     setup = cv2.morphologyEx(setup, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+
     if debug: 
-        plot(amassado, setup, 'Original', 'Threshold Global')
+        plot(amassado, setup, 'Original', 'Morfologia - Abertura')
+
     setup = inverter(setup)
+
     if debug: 
-        plot(amassado, setup, 'Original', 'Threshold Global')
+        plot(amassado, setup, 'Original', 'Invesão')
     
     plot(amassado, MPP(setup, 200), "Original", "MPP")
 
